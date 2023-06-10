@@ -48,11 +48,37 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-        self.pushButton_przewyzszenia.clicked.connect(self.)
-        self.pushButton_pole.clicked.connect(self.)
+        self.radioButton_przewyzszenia.clicked.connect(self.liczenie)
+        self.radioButton_pole.clicked.connect(self.liczenie)
         
     
-
+    def liczenie(self):
+        aktywna_warstwa = iface.activeLayer()
+        zliczenie_obiektow = aktywna_warstwa.selectedFeatureCount()
+        
+        x = []
+        y = []
+        z = []
+        nr = []
+        
+        for punkt in aktywna_warstwa.selectedFeatureCount():
+            x.append(punkt[" x_92 "])
+            y.append(punkt[" y_92 "])
+            z.append(punkt[" z_92 "])
+            nr.append(punkt[" nr "])
+            
+        if self.radioButton.isChecked() == True and zliczenie_obiektow == 2:
+            dh = z[1] - z[0]
+            punkt_1 = nr[0]
+            punkt_2 = nr[1]
+            iface.messageBar().pushMessage("przewyższenie wysokosci między punktem '+ str(punkt_1)+ 'a punktem '+str(punkt_2)+' rowna sie: '+str(round(dh,3))+' [m]")
+            
+            
+            
+        
+            
+        
+        
         
         
         
