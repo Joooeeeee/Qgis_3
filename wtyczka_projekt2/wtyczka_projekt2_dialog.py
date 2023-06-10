@@ -27,6 +27,12 @@ import os
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
+from qgis.utils import iface
+from qgis.core import QgsWkbTypes
+import numpy as np
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QDialog, QApplication, QMessageBox
+
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wtyczka_projekt2_dialog_base.ui'))
@@ -42,3 +48,15 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
+        self.pushButton_przewyzszenia.clicked.connect(self.)
+        self.pushButton_pole.clicked.connect(self.)
+        
+    
+
+        
+        
+        
+        
+        
+        
+        
