@@ -67,14 +67,34 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             z.append(punkt[" z_92 "])
             nr.append(punkt[" nr "])
             
-        if self.radioButton.isChecked() == True and zliczenie_obiektow == 2:
+        if self.radioButton_przeywzszenie.isChecked() == True and zliczenie_obiektow == 2:
             dh = z[1] - z[0]
             punkt_1 = nr[0]
             punkt_2 = nr[1]
-            iface.messageBar().pushMessage("przewyższenie wysokosci między punktem '+ str(punkt_1)+ 'a punktem '+str(punkt_2)+' rowna sie: '+str(round(dh,3))+' [m]")
+            iface.messageBar().pushMessage('przewyższenie wysokosci między punktem '+ str(punkt_1)+ 'a punktem '+str(punkt_2)+' rowna sie = '+str(round(dh,3))+' [m] ')
             
+        elif self.radioButton_pole.isChecked() == True and zliczenie_obiektow > 2:
+            punkty = []
+            for i in range(0, len(x)):
+                punkty.append([x[i], y[i] ])
+            p = 0
+            for i in range(len(punkty)):
+                if i == len(punkty) - 1:
+                    p += (punkty[i][0] + punkty[0][0]) * (punkty[i][1] - punkty[0][1])
+                else: 
+                    p += (punkty[i][0] + punkty[i + 1][0]) * (punkty[i][1] - punkty[i + 1][1])
+            pole = -p / 2
+            print(pole)
+            iface.messageBar().pushMessage('pole powierzchni' +str(nr)+ 'rowna sie ='+str(round(pole, 5))+ ' [m] ')
             
-            
+        else:
+            msg =  QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText('błędna liczba punktów zaznaczonych do tego działania')
+            msg.setInformativeText
+            msg.setWindowTitle('błędne zaznaczenie punktów')
+            msg.exec_()
+        
         
             
         
