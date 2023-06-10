@@ -62,6 +62,7 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         y = []
         z = []
         nr = []
+        punkt = []
         
         for punkt in aktywna_warstwa.selectedFeatureCount():
             x.append(punkt[" x_92 "])
