@@ -86,7 +86,8 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             pole = -p / 2
             print(pole)
             iface.messageBar().pushMessage('pole powierzchni' +str(nr)+ 'rowna sie ='+str(round(pole, 5))+ ' [m] ')
-            
+
+                    
         else:
             msg =  QMessageBox()
             msg.setIcon(QMessageBox.Critical)
@@ -94,7 +95,7 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             msg.setInformativeText
             msg.setWindowTitle('błędne zaznaczenie punktów')
             msg.exec_()
-        
+       
         
             
         
