@@ -21,11 +21,17 @@ class Ui_wtyczka_projekt2DialogBase(object):
         self.button_box.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.button_box.setObjectName("button_box")
         self.radioButton_przewyzszenia = QtWidgets.QRadioButton(wtyczka_projekt2DialogBase)
-        self.radioButton_przewyzszenia.setGeometry(QtCore.QRect(260, 170, 141, 18))
+        self.radioButton_przewyzszenia.setGeometry(QtCore.QRect(140, 180, 141, 18))
         self.radioButton_przewyzszenia.setObjectName("radioButton_przewyzszenia")
-        self.radioButton_2 = QtWidgets.QRadioButton(wtyczka_projekt2DialogBase)
-        self.radioButton_2.setGeometry(QtCore.QRect(260, 210, 141, 18))
-        self.radioButton_2.setObjectName("radioButton_2")
+        self.radioButton_pole = QtWidgets.QRadioButton(wtyczka_projekt2DialogBase)
+        self.radioButton_pole.setGeometry(QtCore.QRect(140, 200, 141, 18))
+        self.radioButton_pole.setObjectName("radioButton_pole")
+        self.label = QtWidgets.QLabel(wtyczka_projekt2DialogBase)
+        self.label.setGeometry(QtCore.QRect(140, 110, 181, 16))
+        self.label.setObjectName("label")
+        self.mMapLayerComboBox = QgsMapLayerComboBox(wtyczka_projekt2DialogBase)
+        self.mMapLayerComboBox.setGeometry(QtCore.QRect(120, 140, 160, 27))
+        self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
 
         self.retranslateUi(wtyczka_projekt2DialogBase)
         self.button_box.accepted.connect(wtyczka_projekt2DialogBase.accept) # type: ignore
@@ -36,7 +42,9 @@ class Ui_wtyczka_projekt2DialogBase(object):
         _translate = QtCore.QCoreApplication.translate
         wtyczka_projekt2DialogBase.setWindowTitle(_translate("wtyczka_projekt2DialogBase", "wtyczka projekt 2"))
         self.radioButton_przewyzszenia.setText(_translate("wtyczka_projekt2DialogBase", "liczenie przewyższenia"))
-        self.radioButton_2.setText(_translate("wtyczka_projekt2DialogBase", "liczenia pola powierzchni"))
+        self.radioButton_pole.setText(_translate("wtyczka_projekt2DialogBase", "liczenia pola powierzchni"))
+        self.label.setText(_translate("wtyczka_projekt2DialogBase", "wybierz aktywna warstwe"))
+from qgsmaplayercombobox import QgsMapLayerComboBox
 
 
 if __name__ == "__main__":

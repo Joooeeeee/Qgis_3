@@ -32,8 +32,8 @@
   <widget class="QRadioButton" name="radioButton_przewyzszenia">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>170</y>
+     <x>140</x>
+     <y>180</y>
      <width>141</width>
      <height>18</height>
     </rect>
@@ -42,11 +42,11 @@
     <string>liczenie przewyższenia</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_2">
+  <widget class="QRadioButton" name="radioButton_pole">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>210</y>
+     <x>140</x>
+     <y>200</y>
      <width>141</width>
      <height>18</height>
     </rect>
@@ -55,7 +55,37 @@
     <string>liczenia pola powierzchni</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>wybierz aktywna warstwe</string>
+   </property>
+  </widget>
+  <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>140</y>
+     <width>160</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
