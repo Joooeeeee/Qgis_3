@@ -27,6 +27,8 @@ import os
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
+from qgis._core import *
+
 from qgis.utils import iface
 from qgis.core import QgsWkbTypes
 import numpy as np
