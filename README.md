@@ -10,4 +10,4 @@ Aby skorzytsać z wtyczki należy zaznaczyć wybrane punkty, które chce się uw
 Po zaznaczneiu owych punktów, wybrać z górnego pasku menu "wtyczki" kolejno wejść w "wtyczka projekt 2", wyswiętli się okno główne wtyczki. Teraz należy wybrać warstwę na której się zaznaczyło punkty, oraz wybrać funkcję którą chce się użyć ( do wyboru "liczenie przewyższenia" lub "liczenie pola powierzchni"), po kliknięciu wybranej funkcji, wynik wyświetli się w górnej części ekranu. 
 (jeśli chodzi o pola powierzchni można wtyczkę przetestować w dowolnej warstwie, jeśli jednak chodzi o przewyższenia, zalecamy skorzystanie ze specjalnie przygotowanej warstwy "warstwa_wysokość")
 # 4. Znane błędy i nietypowe zachowania 
-Błędnym zachowaniem programu Qgis jest błędne dobieranie punktów (w złej kolejności) do obliczenia pola powierzchni, w skutek tego pole powierzchni zostaje policzone w inny sposób niż użytkownik sobie tego życzy. 
+Błędnym zachowaniem programu Qgis jest błędne dobieranie punktów (w złej kolejności) do obliczenia pola powierzchni, w skutek tego pole powierzchni zostaje policzone w inny sposób niż użytkownik sobie tego życzy. Poprawne wartości wychodzą gdy punkty są 3 
