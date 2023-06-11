@@ -59,14 +59,19 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         zliczenie_obiektow = self.mMapLayerComboBox.currentLayer().selectedFeatures()
         X = []
         Y = []
-        
+        H = []
         for punkt in zliczenie_obiektow:
             wsp = punkt.geometry().asPoint()
             x = wsp.x()
             y = wsp.y()
-            
             X.append(x)
             Y.append(y)
+            
+        wysokosci = iface.activeLayer().selectedFeatures() 
+        for i in wysokosci:
+            H.append(i[2])
+            
+            
         '''            
         #len(aktywna_warstwa.selectedFeatureCount())
         
@@ -82,7 +87,7 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             nr.append(punkt[" nr "])
         '''    
         if self.radioButton_przewyzszenia.isChecked() == True and len(zliczenie_obiektow) == 2:
-            dh = z[1] - z[0]
+            dh = H[1] - H[0]
             punkt_1 = nr[0]
             punkt_2 = nr[1]
             iface.messageBar().pushMessage('przewyższenie wysokosci między punktem '+ str(punkt_1)+ 'a punktem '+str(punkt_2)+' rowna sie = '+str(round(dh,3))+' [m] ')
@@ -99,7 +104,7 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
                     p += (punkty[i][0] + punkty[i + 1][0]) * (punkty[i][1] - punkty[i + 1][1])
             pole = abs( -p / 2 )
             
-            iface.messageBar().pushMessage('pole powierzchni rowna sie ='+str(round(pole, 5))+ ' [m] ')
+            iface.messageBar().pushMessage('pole powierzchni rowna sie ='+str(round(pole, 5))+ ' [m^2] ')
             
 
         else:
