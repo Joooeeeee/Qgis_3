@@ -72,20 +72,7 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             H.append(i[2])
             
             
-        '''            
-        #len(aktywna_warstwa.selectedFeatureCount())
         
-        x = []
-        y = []
-        z = []
-        nr = []
-        
-        for punkt in len(aktywna_warstwa.selectedFeatureCount()):
-            x.append(punkt[" x_92 "])
-            y.append(punkt[" y_92 "])
-            z.append(punkt[" z_92 "])
-            nr.append(punkt[" nr "])
-        '''    
         if self.radioButton_przewyzszenia.isChecked() == True and len(zliczenie_obiektow) == 2:
             dh = H[1] - H[0]
             punkt_1 = nr[0]
@@ -140,4 +127,17 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         
         
         
-        
+'''            
+     #len(aktywna_warstwa.selectedFeatureCount())
+     
+     x = []
+     y = []
+     z = []
+     nr = []
+     
+     for punkt in len(aktywna_warstwa.selectedFeatureCount()):
+         x.append(punkt[" x_92 "])
+         y.append(punkt[" y_92 "])
+         z.append(punkt[" z_92 "])
+         nr.append(punkt[" nr "])
+'''       
