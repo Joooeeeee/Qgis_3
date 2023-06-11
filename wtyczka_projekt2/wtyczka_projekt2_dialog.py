@@ -60,12 +60,16 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         X = []
         Y = []
         H = []
+        nr = []
+        i = 0
         for punkt in zliczenie_obiektow:
             wsp = punkt.geometry().asPoint()
             x = wsp.x()
             y = wsp.y()
             X.append(x)
             Y.append(y)
+            i+=1
+            nr.append(i)
             
         wysokosci = iface.activeLayer().selectedFeatures() 
         for i in wysokosci:
