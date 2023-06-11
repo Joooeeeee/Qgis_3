@@ -28,7 +28,7 @@ from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
 from qgis._core import *
-
+from math import *
 from qgis.utils import iface
 from qgis.core import QgsWkbTypes
 import numpy as np
@@ -100,8 +100,8 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             pole = abs( -p / 2 )
             
             iface.messageBar().pushMessage('pole powierzchni rowna sie ='+str(round(pole, 5))+ ' [m] ')
+            
 
-                    
         else:
             msg =  QMessageBox()
             msg.setIcon(QMessageBox.Critical)
@@ -110,8 +110,23 @@ class wtyczka_projekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             msg.setWindowTitle('błędne zaznaczenie punktów')
             msg.exec_()
        
-        
-            
+    def katy(self, p, punkt1):
+        dx = p[0] - punkt1[0]
+        dy = p[1] - punkt1[1]
+        kat = atan2(dx, dy)
+        return kat
+    
+    def sortowanie_punktow(self, k):
+        k = []
+        elementy = self.mMapLayerComboBox_layers.currentLayer().selectedFeatures()
+        for element in elementy:
+            wspolrzedne = element.geometry().asPoint()
+            X = wspolrzedne.x()
+            Y = wspolrzedne.y()
+            k.append([X, Y])
+        punkt1 = [sum(p[0] for p in k) / len(k), sum(p[1] for p in k) / len(k)]
+        posortowane = sorted(k, key = lambda p: self.katy(p, punkt1))
+        return posortowane
         
         
         
