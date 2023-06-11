@@ -3,6 +3,7 @@
 Wtyczka oferuje obliczanie przewyższeń między dwoma punktami oraz obliczanie pola powierzchni między minimlanie 3 punktami.
 # 2. Wymagania działania programu 
 Wymagane jest posiadanie programu QGIS oraz warstwa posiadająca współrzędnych punktów. 
+Również folder z wtyczką należy umiejscowić w dobrym miejscu przykładowa ścieżka gdzie należy  to zrobić "C:\Users\Lenovo\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins"
 # 3. Instrukcja korzystania z wtyczki
 Po odpaleniu programu QGIS w górnym pasku menu należy wybrać "wtyczki". Nastepnie "zarządzanie wtyczkami" i wyszukać "wtyczka projekt 2", zaznaczyć ją i zamknąć okno.
 Do korzystania w pełnej możliwości wtyczki należy posiadać warstwę, która ma współrzędne X, Y, h. Jeśli warstwa nie posiada wysokości, będzie możliwe tylko policzenie pola powierzchni. 
